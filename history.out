@@ -11,29 +11,20 @@
    11  su -user1
    12  su - user1
    13  whoami
-   14  groupadd students
-   15  useradd -u 1234 -m -G students user1
-   16  passwd user1
-   17  chage -M 90 user1
-   18  id user1
-   19  chage -l user1
-   20  find / -perm -4000 -type f -ls 2>/dev/null > /home/yariy/mephi-linux-security-2026/files-suid.out
-   21  cat /home/yariy/mephi-linux-security-2026/files-suid.out | wc -l
-   22  grep -E 'passwd|sudo|su$' /home/yariy/mephi-linux-security-2026/files-suid.out
-   23  ps -eo pid,ruid,euid,comm | awk '$2 != 0 && $3 == 0' > /home/yariy/mephi-linux-security-2026/ps-monitor.out
-   24  cat /home/yariy/mephi-linux-security-2026/ps-monitor.out
-   25  cp /usr/bin/cat /home/user1/cat
-   26  chown root:root /home/user1/cat
-   27  chmod u+s /home/user1/cat
-   28  ls -l /home/user1/cat
-   29  /home/user1/cat /etc/shadow
-   30  cp /usr/bin/chown /home/user1/chown
-   31  setcap cap_chown+ep /home/user1/chown
-   32  getcap /home/user1/chown
-   33  visudo -f /etc/sudoers
-   34  mv ~/Pictures/Screenshots/*.png /home/yariy/mephi-linux-security-2026/mephi-screenshot.png
-   35  ls -lt /home/yariy/Pictures/Screenshots/
-   36  ls -lt /home/yariy/Изображения/Снимки экрана
-   37  ls -lt "/home/yariy/Изображения/Снимки экрана/"
-   38  mv "/home/yariy/Изображения/Снимки экрана/"*.png /home/yariy/mephi-linux-security-2026/mephi-screenshot.png
-   39  history > /home/yariy/mephi-linux-security-2026/history.out
+   14  cat /home/yariy/mephi-linux-security-2026/files-suid.out | wc -l
+   15  grep -E 'passwd|sudo|su$' /home/yariy/mephi-linux-security-2026/files-suid.out
+   16  ps -eo pid,ruid,euid,comm | awk '$2 != 0 && $3 == 0' > /home/yariy/mephi-linux-security-2026/ps-monitor.out
+   17  cat /home/yariy/mephi-linux-security-2026/ps-monitor.out
+   18  cp /usr/bin/cat /home/user1/cat
+   19  chown root:root /home/user1/cat
+   20  chmod u+s /home/user1/cat
+   21  ls -l /home/user1/cat
+   22  /home/user1/cat /etc/shadow
+   23  cp /usr/bin/chown /home/user1/chown
+   24  setcap cap_chown+ep /home/user1/chown
+   25  getcap /home/user1/chown
+   26  visudo -f /etc/sudoers
+   27  mv ~/Pictures/Screenshots/*.png /home/yariy/mephi-linux-security-2026/mephi-screenshot.png
+   28  ls -lt "/home/yariy/Изображения/Снимки экрана/"
+   29  mv "/home/yariy/Изображения/Снимки экрана/"*.png /home/yariy/mephi-linux-security-2026/mephi-screenshot.png
+   30  history > /home/yariy/mephi-linux-security-2026/history.out
